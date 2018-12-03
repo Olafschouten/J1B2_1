@@ -12,7 +12,6 @@ var inventoryItem = document.getElementById('inventoryItem')
 //---------------startMenu---------------//
 
 function startMenu() {
-    gamecontainer.style.backgroundImage = "url('images/bg_startmenu.jpg')";
     title.classList.add('title_Postion');
     button1.innerHTML = "StartGame";
     button1.classList.add('button1_Postion');
@@ -21,6 +20,7 @@ function startMenu() {
     gamecontainer.classList.add('backgroundStartMenu')
     inventoryItem.style.display = 'none';
     button1.onclick = level1;
+    gamecontainer.style.backgroundImage = "url('images/bg_startmenu.jpg')";
 
 }
 

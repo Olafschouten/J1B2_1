@@ -1,4 +1,14 @@
-/* object-fit: cover; */
+/*  */
+
+.title_Postion {
+    margin: auto;
+    max-width: 320px;
+    height: auto;
+    border: 2px solid red;
+    border-radius: 12px;
+    background-color: rgb(190, 190, 190);
+    color: rgb(187, 0, 0);
+}
 
 .button1_Postion {
     margin-top: 780px;
@@ -8,19 +18,26 @@
     text-align: center;
 }
 
-.backgroundStartMenu {
+.backgroundStartMenu, .backgroundYoudied, .backgroundLevel1, .backgroundLevel2 {
     background: no-repeat;
-    height: 930px;
+    max-height: 950px;
+    background-size: 100% 100%;
 }
 
-.backgroundYoudied {
+/* .backgroundYoudied {
     background: no-repeat;
+    height: 930px;
+    background-size: 100% 100%;
 }
 
 .backgroundLevel1 {
     background: no-repeat;
+    height: 930px;
+    background-size: 100% 100%;
 }
 
 .backgroundLevel2 {
     background: no-repeat;
-}
+    height: 930px;
+    background-size: 100% 100%;
+} */

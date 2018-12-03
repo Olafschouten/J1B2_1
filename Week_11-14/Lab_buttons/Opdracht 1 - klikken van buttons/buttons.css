@@ -1,0 +1,25 @@
+#container {
+    width: 650px;
+    height: 600px;
+}
+
+.backgroundcontainer {
+    background-image: url("images/bg0.jpg")
+}
+
+.backgroundcontainer1 {
+    background-image: url("images/bg1.jpg")
+}
+
+.backgroundcontainer2 {
+    background-image: url("images/bg2.jpg")
+}
+
+.backgroundcontainer3 {
+    background-image: url("images/bg3.jpg")
+}
+
+#f0 {
+    float: right;
+    margin-top: 540px;
+}

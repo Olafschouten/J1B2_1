@@ -1,4 +1,7 @@
-/*  */
+body {
+    margin: 0;
+    padding: 0;
+}
 
 .title_Postion {
     margin: auto;
@@ -15,6 +18,8 @@
 }
 
 #game-container {
+    width: 100vw;
+    height: 100vh;
     text-align: center;
 }
 
@@ -24,20 +29,8 @@
     background-size: 100% 100%;
 }
 
-/* .backgroundYoudied {
-    background: no-repeat;
-    height: 930px;
-    background-size: 100% 100%;
+.itemEen {
+    width: 20px;
+    height: 10px;
+    position: relative;
 }
-
-.backgroundLevel1 {
-    background: no-repeat;
-    height: 930px;
-    background-size: 100% 100%;
-}
-
-.backgroundLevel2 {
-    background: no-repeat;
-    height: 930px;
-    background-size: 100% 100%;
-} */

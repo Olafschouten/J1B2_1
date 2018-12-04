@@ -1,0 +1,26 @@
+/* object-fit: cover; */
+
+.button1_Postion {
+    margin-top: 780px;
+}
+
+#game-container {
+    text-align: center;
+}
+
+.backgroundStartMenu {
+    background: no-repeat;
+    height: 930px;
+}
+
+.backgroundYoudied {
+    background: no-repeat;
+}
+
+.backgroundLevel1 {
+    background: no-repeat;
+}
+
+.backgroundLevel2 {
+    background: no-repeat;
+}

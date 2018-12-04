@@ -30,6 +30,7 @@ function startMenu() {
     button1.onclick = level1;
     gamecontainer.classList.add('backgroundStartMenu');
     gamecontainer.style.backgroundImage = "url('images/bg_startmenu.jpg')";
+    inventoryItem.style.display = 'none';
 }
 
 function level1() {
@@ -45,6 +46,7 @@ function level1() {
     button2.onclick = dood;
     button1.onclick = level2;
     button3.onclick = level3;
+    inventoryItem.style.display = 'none';
 
 }
 
@@ -57,6 +59,7 @@ function dood() {
     button2.style.display = 'none';
     button3.style.display = 'none';
     button1.onclick = startMenu;
+    inventoryItem.style.display = 'none';
 }
 
 function level2() {
@@ -70,6 +73,7 @@ function level2() {
     button1.onclick = level1;
     button2.style.display = 'none';
     button3.style.display = 'none';
+    inventoryItem.style.display = '';
 
     inventoryItem.onclick = itemSleutel;
 }
@@ -86,6 +90,7 @@ function level3() {
     button3.style.display = 'inline-block';
     button3.innerHTML = 'Rechts';
     button3.onclick = level4;
+    inventoryItem.style.display = 'none';
 }
 
 function level4() {
@@ -98,6 +103,7 @@ function level4() {
     button2.onclick = level5;
     button2.style.display = 'inline-block';
     button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
 }
 
 function level5() {
@@ -109,12 +115,13 @@ function level5() {
     button2.style.display = 'inline-block';
     button2.onclick = level5;
     button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
 
     if (inventory['Sleutel'] == true) {
         button2.onclick = level7;
     }
     else {
-        button2.onclick = level6_1;
+        button2.onclick = level7_1;
     }
 }
 
@@ -126,16 +133,19 @@ function level6() {
     button1.onclick = level3;
     button2.style.display = 'none';
     button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
 }
 
-function level6_1() {
-    gamecontainer.classList.add('backgroundLevel6_1');
+function level7_1() {
+    description.style.display = 'none';
+    gamecontainer.classList.add('backgroundLevel7_1');
     description.style.display = 'none';
     gamecontainer.style.backgroundImage = "url('images/bg_lv6_1.jpg')";
     button1.innerHTML = 'Terug';
-    button1.onclick = level6;
+    button1.onclick = level5;
     button2.style.display = 'none';
     button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
 }
 
 function level7() {
@@ -143,10 +153,23 @@ function level7() {
     description.style.display = 'none';
     gamecontainer.style.backgroundImage = "url('images/bg_lv7.jpg')";
     button1.innerHTML = 'Terug';
-    button1.onclick = level6;
-    button2.style.display = 'none';
+    button1.onclick = level5;
+    button2.style.display = 'inline-block';
+    button2.innerHTML = 'Om hoog';
+    button2.onclick = dood3;
     button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
 }
 
+function dood3() {
+    gamecontainer.classList.add('backgrounddood3');
+    description.style.display = 'none';
+    gamecontainer.style.backgroundImage = "url('images/bg_lv8.png')";
+    button1.innerHTML = 'Restart';
+    button1.onclick = startMenu;
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
+}
 
 startMenu();

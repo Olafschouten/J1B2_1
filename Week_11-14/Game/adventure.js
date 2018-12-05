@@ -8,7 +8,7 @@ var button3 = document.getElementById("button3");
 
 var inventoryItem = document.getElementById('inventoryItem');
 
-var inventory = { 'Sleutel': false }
+var inventory = { 'Sleutel': false, 'Crowbar': false }
 
 
 function itemSleutel() {
@@ -16,13 +16,21 @@ function itemSleutel() {
     document.getElementById('inventoryItem').style.display = 'none';
 }
 
+function itemCrowbar() {
+    inventory['Crowbar'] = true;
+    document.getElementById('inventoryItem').style.display = 'none';
+}
 
 
 //---------------startMenu---------------//
 
 function startMenu() {
     title.classList.add('title_Postion');
-    button1.innerHTML = "StartGame";
+    title.style.display = '';
+    title.innerHTML = 'Verdwaald in het bos';
+    description.style.display = '';
+    description.innerHTML = 'Klik op start om de game te staren';
+    button1.innerHTML = "Start";
     button1.classList.add('button1_Postion');
     button2.style.display = 'none';
     button3.style.display = 'none';
@@ -114,19 +122,28 @@ function level5() {
     button1.onclick = level4;
     button2.style.display = 'inline-block';
     button2.onclick = level5;
-    button3.style.display = 'none';
+    button2.innerHTML = 'Naar binnen';
+    button3.style.display = 'inline-block';
+    button3.innerHTML = 'Om het huis heen';
+    button3.onclick = level7_1;
     inventoryItem.style.display = 'none';
 
     if (inventory['Sleutel'] == true) {
         button2.onclick = level7;
+        description.sryle.display = 'none';
     }
     else {
-        button2.onclick = level7_1;
+        button2.onclick = level5;
+        description.style.display = 'block';
+        description.innerHTML = 'Je hebt een sleutel nodig om binnen te komen';
     }
 }
 
 function level6() {
     gamecontainer.classList.add('backgroundLevel6');
+    inventoryItem.classList.add('itemCrowbar');
+    inventoryItem.src = "images/crowbar.png";
+    inventoryItem.style.display = 'inline-block';
     description.style.display = 'none';
     gamecontainer.style.backgroundImage = "url('images/bg_lv6.jpg')";
     button1.innerHTML = 'Terug';
@@ -134,6 +151,11 @@ function level6() {
     button2.style.display = 'none';
     button3.style.display = 'none';
     inventoryItem.style.display = 'none';
+
+    inventoryItem.style.display = '';
+
+    inventoryItem.onclick = itemCrowbar;
+
 }
 
 function level7_1() {
@@ -143,33 +165,69 @@ function level7_1() {
     gamecontainer.style.backgroundImage = "url('images/bg_lv6_1.jpg')";
     button1.innerHTML = 'Terug';
     button1.onclick = level5;
-    button2.style.display = 'none';
+    button2.style.display = '';
+    button2.innerHTML = 'Naar binnen met de Crowbar';
     button3.style.display = 'none';
     inventoryItem.style.display = 'none';
+
+    if (inventory['Crowbar'] == true) {
+        button2.onclick = level7;
+        description.style.display = 'none';
+    }
+    else {
+        button2.onclick = level7_1;
+        description.style.display = 'block';
+        description.innerHTML = 'Je hebt een crowbar nodig om binnen te komen';
+    }
 }
 
 function level7() {
     gamecontainer.classList.add('backgroundLevel7');
     description.style.display = 'none';
     gamecontainer.style.backgroundImage = "url('images/bg_lv7.jpg')";
-    button1.innerHTML = 'Terug';
-    button1.onclick = level5;
+    button1.innerHTML = 'Links';
+    button1.onclick = level8;
     button2.style.display = 'inline-block';
     button2.innerHTML = 'Om hoog';
     button2.onclick = dood3;
-    button3.style.display = 'none';
+    button3.style.display = 'inline-block';
+    button3.innerHTML = 'Rechts';
+    button3.onclick = level8_1;
     inventoryItem.style.display = 'none';
 }
 
 function dood3() {
     gamecontainer.classList.add('backgrounddood3');
     description.style.display = 'none';
-    gamecontainer.style.backgroundImage = "url('images/bg_lv8.png')";
+    gamecontainer.style.backgroundImage = "url('images/bg_youdied2.png')";
     button1.innerHTML = 'Restart';
     button1.onclick = startMenu;
     button2.style.display = 'none';
     button3.style.display = 'none';
     inventoryItem.style.display = 'none';
 }
+
+function level8() {
+    gamecontainer.classList.add('backgroundLevel8');
+    description.style.display = 'none';
+    gamecontainer.style.backgroundImage = "url('images/bg_lv8_1.jpg')";
+    button1.innerHTML = 'Terug';
+    button1.onclick = level7;
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
+}
+
+function level8_1() {
+    gamecontainer.classList.add('backgroundLevel8_1');
+    description.style.display = 'none';
+    gamecontainer.style.backgroundImage = "url('images/bg_lv8.jpg')";
+    button1.innerHTML = 'Terug';
+    button1.onclick = level7;
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
+}
+
 
 startMenu();

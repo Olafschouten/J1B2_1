@@ -1,6 +1,6 @@
 var gamecontainer = document.getElementById('game-container');
-var title = document.getElementById('title')
-var description = document.getElementById('description')
+var title = document.getElementById('title');
+var description = document.getElementById('description');
 var gamebuttons = document.getElementById("game-buttons");
 var button1 = document.getElementById("button1");
 var button2 = document.getElementById("button2");
@@ -9,6 +9,7 @@ var button3 = document.getElementById("button3");
 var inventoryItem = document.getElementById('inventoryItem');
 
 var inventory = { 'Sleutel': false, 'Crowbar': false }
+
 
 
 function itemSleutel() {
@@ -25,9 +26,10 @@ function itemCrowbar() {
 //---------------startMenu---------------//
 
 function startMenu() {
+    description.classList.remove('endDescription');
     title.classList.add('title_Postion');
     title.style.display = '';
-    title.innerHTML = 'Verdwaald in het bos';
+    title.innerHTML = 'Zoek de shcat';
     description.style.display = '';
     description.innerHTML = 'Klik op start om de game te staren';
     button1.innerHTML = "Start";
@@ -44,7 +46,7 @@ function startMenu() {
 function level1() {
     gamecontainer.classList.add('backgroundLevel1');
     title.style.display = 'none';
-    description.innerHTML = 'Kies welke kan je op wilt'
+    description.style.display = 'none';
     button1.innerHTML = 'Links';
     button2.style.display = 'inline-block';
     button3.style.display = 'inline-block';
@@ -60,7 +62,8 @@ function level1() {
 
 function dood() {
     gamecontainer.classList.add('backgroundYoudied');
-    description.style.display = 'none';
+    description.style.display = '';
+    description.innerHTML = 'Je bent vermoord door het moster';
     gamecontainer.classList.add('youdied');
     gamecontainer.style.backgroundImage = "url('images/bg_youdied1.jpg')";
     button1.innerHTML = 'Restart';
@@ -198,7 +201,8 @@ function level7() {
 
 function dood3() {
     gamecontainer.classList.add('backgrounddood3');
-    description.style.display = 'none';
+    description.style.display = '';
+    description.innerHTML = 'Het spook heeft je vermoord';
     gamecontainer.style.backgroundImage = "url('images/bg_youdied2.png')";
     button1.innerHTML = 'Restart';
     button1.onclick = startMenu;
@@ -213,7 +217,9 @@ function level8() {
     gamecontainer.style.backgroundImage = "url('images/bg_lv8_1.jpg')";
     button1.innerHTML = 'Terug';
     button1.onclick = level7;
-    button2.style.display = 'none';
+    button2.style.display = 'inline-block';
+    button2.innerHTML = 'Vooruit';
+    button2.onclick = levelEnd;
     button3.style.display = 'none';
     inventoryItem.style.display = 'none';
 }
@@ -224,10 +230,24 @@ function level8_1() {
     gamecontainer.style.backgroundImage = "url('images/bg_lv8.jpg')";
     button1.innerHTML = 'Terug';
     button1.onclick = level7;
-    button2.style.display = 'none';
+    button2.style.display = 'inline-block';
+    button2.innerHTML = 'Vooruit';
+    button2.onclick = levelEnd;
     button3.style.display = 'none';
     inventoryItem.style.display = 'none';
 }
 
+function levelEnd() {
+    gamecontainer.classList.add('backgroundLevelEnd');
+    description.classList.add('endDescription');
+    description.style.display = '';
+    description.innerHTML = 'Je hebt de schat gevonden!';
+    gamecontainer.style.backgroundImage = "url('images/end.jpg')";
+    button1.innerHTML = 'Restart';
+    button1.onclick = startMenu;
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+    inventoryItem.style.display = 'none';
+}
 
 startMenu();

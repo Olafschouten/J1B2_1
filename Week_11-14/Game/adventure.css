@@ -5,7 +5,18 @@ body {
 
 .title_Postion {
     margin: auto;
-    max-width: 320px;
+    width: 300px;;
+    height: auto;
+    border: 2px solid red;
+    border-radius: 12px;
+    background-color: rgb(190, 190, 190);
+    color: rgb(187, 0, 0);
+}
+
+#description {
+    top: 200px;
+    margin: auto;
+    width: 300px;;
     height: auto;
     border: 2px solid red;
     border-radius: 12px;
@@ -23,7 +34,7 @@ body {
     text-align: center;
 }
 
-.backgroundStartMenu, .backgroundYoudied, .backgroundLevel1, .backgroundLevel2 {
+.backgroundStartMenu, .backgroundYoudied, .backgroundLevel1, .backgroundLevel2, .backgroundLevel3, .backgroundLevel4, .backgroundLevel5, .backgroundLevel6, .backgroundLevel7, .backgroundLevel7_1, .backgrounddood3, .backgroundLevel8, .backgroundLevel8_1, .backgroundLevelEnd {
     background: no-repeat;
     max-height: 950px;
     background-size: 100% 100%;
@@ -39,4 +50,15 @@ body {
     width: 20px;
     height: 10px;
     position: relative;
+}
+
+.endDescription {
+    margin: auto;
+    width: 500px;;
+    height: auto;
+    font-size: 200%;
+    border: 2px solid red;
+    border-radius: 12px;
+    background-color: rgb(190, 190, 190);
+    color: rgb(187, 0, 0);
 }

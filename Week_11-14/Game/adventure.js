@@ -8,7 +8,7 @@ var button3 = document.getElementById("button3");
 
 var inventoryItem = document.getElementById('inventoryItem');
 
-var inventory = { 'Sleutel': false, 'Crowbar': false }
+var inventory = { 'Sleutel': false, 'Crowbar': false };
 
 
 
@@ -139,7 +139,7 @@ function level5() {
         button2.onclick = level5;
         description.style.display = 'block';
         description.innerHTML = 'Je hebt een sleutel nodig om binnen te komen';
-    }
+    } 
 }
 
 function level6() {

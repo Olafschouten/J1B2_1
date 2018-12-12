@@ -29,7 +29,7 @@ function startMenu() {
     description.classList.remove('endDescription');
     title.classList.add('title_Postion');
     title.style.display = '';
-    title.innerHTML = 'Zoek de shcat';
+    title.innerHTML = 'Zoek de schat';
     description.style.display = '';
     description.innerHTML = 'Klik op start om de game te staren';
     button1.innerHTML = "Start";
@@ -90,7 +90,7 @@ function level2() {
 }
 
 function level3() {
-    gamecontainer.classList.add('backgroundLevel3');
+    gamecontainer.className = 'backgroundLevel3';
     description.style.display = 'none';
     gamecontainer.style.backgroundImage = "url('images/bg_lv3.jpg')";
     button1.innerHTML = 'Links';

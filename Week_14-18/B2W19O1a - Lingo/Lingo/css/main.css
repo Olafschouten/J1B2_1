@@ -1,0 +1,45 @@
+.default {
+    background: #ffff99;
+  }
+  
+  .square {
+    vertical-align:top;
+    margin-top: 4px;
+    border: 1px black solid;
+    border-radius: 5px;
+    display: inline-block;
+    height: 1.25em;
+    width: 1.25em;
+    text-align: center;
+    font-size: 3.5em;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .container{
+    padding-top: 50px;
+    margin-left: 700;
+    margin-top: 50px;
+    width: auto;
+    height: auto;
+    background-image: url("Lingo.jpg");
+    background-repeat: no-repeat;
+  }
+  
+  .row{
+    width: 400px;
+    height: 80px;
+  }
+  
+  .miniBox{
+    vertical-align:top;
+    margin-top: 4px;
+    border: 1px black solid;
+    border-radius: 5px;
+    display: inline-block;
+    height: 1.25em;
+    width: 1.25em;
+    text-align: center;
+    font-size: 3.5em;
+    font-family: 'Lato', sans-serif;
+    margin-left: 5px;
+  }

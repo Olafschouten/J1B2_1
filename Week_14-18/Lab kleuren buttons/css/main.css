@@ -13,7 +13,7 @@ body {
 }
 
 .button1 {
-    background-color: blue;
+    background-color: green;
     color: white;
     margin: 5px;
     width: 100px;
@@ -29,7 +29,7 @@ body {
 }
 
 .button3 {
-    background-color: green;
+    background-color: blue;
     color: white;
     margin: 5px;
     width: 100px;

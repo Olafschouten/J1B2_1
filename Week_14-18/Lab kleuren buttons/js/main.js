@@ -25,9 +25,8 @@ btn3.appendChild(tBtn3);
 btn3.classList.add('button3');
 btn3.onclick = button3;
 
-
 function button1() {
-    body.style.background = 'blue';
+    body.style.background = 'green';
 }
 
 function button2() {
@@ -35,5 +34,5 @@ function button2() {
 }
 
 function button3() {
-    body.style.background = 'green';
+    body.style.background = 'blue';
 }

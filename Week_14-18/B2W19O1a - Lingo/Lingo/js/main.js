@@ -482,15 +482,16 @@ var words = [
 var input = document.createElement("INPUT");
 var button = document.getElementById('checkButton');
 var rand = words[Math.floor(Math.random() * words.length)];
-var container = document.createElement("DIV");
 var activerow = 1;
+var randParts = rand.split("");
 
+//---- Maken van de div container ----//
+var container = document.createElement("DIV");
 document.body.appendChild(container);
 container.classList.add("container");
 
+
 console.log(rand);
-
-
 
 
 //---- Maken van blokjes ----//
@@ -502,6 +503,8 @@ for (b = 1; b <= 5; b++) {
 	container.appendChild(input);
 	input.classList.add("input");
 	input.setAttribute('placeholder', 'voer je antwoord in');
+
+	//---- Divjes aanmaken met een class en een id ----//
 	for (var i = 0; i < 5; i++) {
 		var miniBox = document.createElement("DIV");
 		miniBox.classList.add("miniBox");
@@ -514,33 +517,47 @@ for (b = 1; b <= 5; b++) {
 document.getElementById("row1").firstElementChild.innerHTML = rand[0];
 
 
-//---- Maken van button ----//
-var buttonCreate = document.createElement("BUTTON");
-buttonCreate.classList.add("buttonCheck");
-container.appendChild(buttonCreate);
-buttonCreate.innerHTML = "Check";
-
 //---- Als je op enter drukt word die in de blokjes geplaatst ----//
 input.onkeypress = function (event) {
 	if (event.key == "Enter" || event.keyCode == 13) {
 		var woord = input.value;
 		var arr = woord.split("");
+
+		//---- Het ingevoerde woord printen in de blokjes ----//
 		for (var i = 0; i < arr.length; i++) {
 			document.getElementById("row" + activerow + "box" + i).innerHTML = arr[i];
-			console.log(woord)
+			console.log(woord);
 		}
 		activerow++;
 
+		//---- Je kan niet meer dan 5 keer proberen ----//
 		if (activerow >= 6) {
-			alert('Verloren ' + ' Juiste woord: ' + rand)
+			alert('Verloren ' + ' Juiste woord: ' + rand);
 		}
 	}
-}
 
-console.log(arr);
+	var arrCopy = arr;
+	var randPartsCopy = randParts;
 
-function checkWord() {
-	for (var i = 0; i < rand.length; i++) {
-		rand[i].innerHTML = arr[i];
+	//---- Controleren van het ingevoerde woord (5 letters) ----//
+	for (var i = 0; i < 5; i++) {
+		document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("red");
+
+		//---- Als de letters overeen komen worden ze groen ----//
+		if (randPartsCopy[i] == arrCopy[i]) {
+			document.getElementById("row" + (activerow - 1) + "box" + i).style.backgroundColor = "green";
+			randPartsCopy[i] = null;
+			arrCopy[i] = null;
+		}
+
+		//---- Als de letters niet overeen komen worden ze rood ----//
+		if (arrCopy[i] != null) {
+			if (randPartsCopy.indexOf(arrCopy[i]) > -1) {
+				document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("yellow");
+				randPartsCopy[randPartsCopy.indexOf(arrCopy[i]) = null];
+				arrCopy[i] = null;
+			}
+		}
 	}
+	console.log(arr);
 }

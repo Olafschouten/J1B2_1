@@ -1,0 +1,53 @@
+.default {
+  background: #ffff99;
+}
+
+.square {
+  vertical-align:top;
+  margin-top: 4px;
+  border: 1px black solid;
+  border-radius: 5px;
+  display: inline-block;
+  height: 1.25em;
+  width: 1.25em;
+  text-align: center;
+  font-size: 3.5em;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  padding-top: 50px;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  /* width: auto; */
+  height: auto;
+}
+
+.row {
+  width: 400px;
+  height: 80px;
+}
+
+.miniBox {
+  vertical-align:top;
+  margin-top: 4px;
+  border: 1px black solid;
+  border-radius: 5px;
+  display: inline-block;
+  height: 1.25em;
+  width: 1.25em;
+  text-align: center;
+  font-size: 3.5em;
+  font-family: 'Lato', sans-serif;
+  margin-left: 5px;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+  border-radius: 50%;
+}

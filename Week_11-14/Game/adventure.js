@@ -8,7 +8,7 @@ var button3 = document.getElementById("button3");
 
 var inventoryItem = document.getElementById('inventoryItem');
 
-var inventory = { 'Sleutel': false, 'Crowbar': false };
+var inventory = { 'Sleutel': false, 'Crowbar': false }
 
 
 
@@ -29,7 +29,8 @@ function startMenu() {
     description.classList.remove('endDescription');
     title.classList.add('title_Postion');
     title.style.display = '';
-    title.innerHTML = 'Zoek de schat';
+    title.innerHTML = 'Zoek de shcat';
+    console.log(title);
     description.style.display = '';
     description.innerHTML = 'Klik op start om de game te staren';
     button1.innerHTML = "Start";
@@ -47,6 +48,7 @@ function level1() {
     gamecontainer.classList.add('backgroundLevel1');
     title.style.display = 'none';
     description.style.display = 'none';
+    console.log(title);
     button1.innerHTML = 'Links';
     button2.style.display = 'inline-block';
     button3.style.display = 'inline-block';
@@ -90,7 +92,7 @@ function level2() {
 }
 
 function level3() {
-    gamecontainer.className = 'backgroundLevel3';
+    gamecontainer.classList.add('backgroundLevel3');
     description.style.display = 'none';
     gamecontainer.style.backgroundImage = "url('images/bg_lv3.jpg')";
     button1.innerHTML = 'Links';
@@ -139,7 +141,7 @@ function level5() {
         button2.onclick = level5;
         description.style.display = 'block';
         description.innerHTML = 'Je hebt een sleutel nodig om binnen te komen';
-    } 
+    }
 }
 
 function level6() {

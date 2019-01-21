@@ -33,7 +33,7 @@ var gameloop = function () {
     if (event.key == "Enter" || event.keyCode == 13) {
       document.getElementById('smallMsg').innerHTML = "Green = correct letter, Yellow = wrong place"; // reset message
       guess = input.value.toUpperCase();
-      
+
       var current = "row" + pressn;
       // current row
       var childDivs = document.getElementById(current).getElementsByTagName('div');

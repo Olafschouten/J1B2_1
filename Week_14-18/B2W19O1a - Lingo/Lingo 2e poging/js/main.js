@@ -2,7 +2,6 @@ var input = document.createElement("INPUT");
 var button = document.getElementById('checkButton');
 var randomWordArray = words[Math.floor(Math.random() * words.length)];
 var randomWordParts = randomWordArray.split("");
-var randomWordPartsCopy = randomWordArray.split("");
 var activerow = 1;
 var goed = [];
 var fout = [];
@@ -64,6 +63,8 @@ input.onkeypress = function (event) {
 
 function check2() {
 
+	var randomWordPartsCopy = randomWordArray.split("");
+
 	//---- Controleren van het ingevoerde woord (5 letters) ----//
 	for (var i = 0; i < 5; i++) {
 		document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("red");
@@ -83,36 +84,12 @@ function check2() {
 	i++;
 	checkLetter();
 
-	// //---- Als de letters overeen komen worden ze groen ----//
-	// if (randomWordPartsCopy[i] == userInput[i]) {
-	// 	document.getElementById("row" + (activerow - 1) + "box" + i).style.backgroundColor = "green";
-	// 	// randomWordPartsCopy[i] = null;
-	// 	userInput[i] = null;
-	// }
-
-	// //---- Als de letters niet overeen komen worden ze rood ----//
-	// if (userInput[i] != null) {
-	// 	if (randomWordParts.indexOf(userInput[i]) > -1) {
-	// 		document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("yellow");
-	// 		randomWordParts[randomWordParts[i].indexOf(userInput[i])] = null;
-	// 		userInput[i] = null;
-	// 	}
-	// }
-}
-
-
-function checkLetter() {
-
 	//---- Loop voor het controleren of dat de letter in het woord zitten ----//
 	for (j = 0; j < fout.length; j++) {
 
 		//---- Als de letter in het woord zit dat je invoerd word hij geel ----//
 		if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
 			document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
-		}
-
-		//---- Ander word de letter als nog rood ----//
-		else if (fout[j] != null) {
 		}
 	}
 	j++;

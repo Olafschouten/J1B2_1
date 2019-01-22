@@ -85,17 +85,26 @@ function check2() {
 
 		//---- Loop voor het controleren of dat de letter in het woord zitten ----//
 		for (j = 0; j < fout.length; j++) {
+			if (arrCopy[i] != null) {
 
-			//---- Als de letter in het woord zit dat je invoerd word hij geel ----//
-			if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
-				document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
+				//---- Als de letter in het woord zit dat je invoerd word hij geel ----//
+				if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
+					document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
+					randomWordPartsCopy[i] = null;
+				}
 			}
+
 		}
 		j++;
 	}
+}
 
-	if (randomWordParts[i] == userInput[i]) {
-		alert('Je hebt gewonnen');
+for (var i = 0; i < 5; i++) {
+	if (arrCopy[i] != null) {
+		if (randPartsCopy.indexOf(arrCopy[i]) > -1) {
+			document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("yellow");
+			randPartsCopy[randPartsCopy.indexOf(arrCopy[i])] = null;
+			arrCopy[i] = null;
+		}
 	}
-
 }

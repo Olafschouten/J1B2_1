@@ -1,9 +1,13 @@
+// Olaf Schouten //
+// Davinci college //
+// Lingo opdracht //
+
 var input = document.createElement("INPUT");
 var button = document.getElementById('checkButton');
 var randomWordArray = words[Math.floor(Math.random() * words.length)];
 var randomWordParts = randomWordArray.split("");
 var activerow = 1;
-
+var userInput;
 
 //---- Maken van de div container ----//
 var container = document.createElement("DIV");
@@ -33,8 +37,6 @@ for (b = 1; b <= 5; b++) {
 
 //---- Plaatsen van de eerste letter in het eerst blokje ----//
 document.getElementById("row1").firstElementChild.innerHTML = randomWordArray[0];
-
-var userInput;
 
 //---- Als je op enter drukt word die in de blokjes geplaatst ----//
 input.onkeypress = function (event) {
@@ -99,12 +101,5 @@ function check2() {
 		if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
 			document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
 		}
-		// if (randomWordPartsCopy[i] != null) {
-		// 	//---- Als de letter in het woord zit dat je invoerd word hij geel ----//
-		// 	if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
-		// 		document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
-		// 		randomWordPartsCopy[i] = null;
-		// 	}
-		// }
 	}
 }

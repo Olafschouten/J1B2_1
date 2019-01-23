@@ -3,8 +3,7 @@ var button = document.getElementById('checkButton');
 var randomWordArray = words[Math.floor(Math.random() * words.length)];
 var randomWordParts = randomWordArray.split("");
 var activerow = 1;
-var goed = [];
-var fout = [];
+
 
 //---- Maken van de div container ----//
 var container = document.createElement("DIV");
@@ -22,7 +21,6 @@ for (b = 1; b <= 5; b++) {
 	container.appendChild(input);
 	input.classList.add("input");
 	input.setAttribute('placeholder', 'voer je antwoord in');
-	input.setAttribute('maxLength', '5');
 
 	//---- Divjes aanmaken met een class en een id ----//
 	for (var i = 0; i < 5; i++) {
@@ -38,7 +36,7 @@ document.getElementById("row1").firstElementChild.innerHTML = randomWordArray[0]
 
 var userInput;
 
-//---- Voor deze function uit ----//
+//---- Als je op enter drukt word die in de blokjes geplaatst ----//
 input.onkeypress = function (event) {
 	if (event.key == "Enter" || event.keyCode == 13) {
 		var woord = input.value;
@@ -53,8 +51,15 @@ input.onkeypress = function (event) {
 		activerow++;
 
 		//---- Je kan niet meer dan 5 keer proberen ----//
-		if (activerow >= 6) {
-			alert('Verloren ' + ' Juiste woord: ' + randomWordArray);
+		if (activerow > 5) {
+			alert("Dit was je laatse kans!");
+			alert("Het woord was:  " + randomWordArray);
+			location.reload();
+		}
+
+		if (randomWordArray == woord) {
+			alert("Het is je gelukt!");
+			location.reload();
 		}
 
 		console.log(userInput);
@@ -64,47 +69,42 @@ input.onkeypress = function (event) {
 
 function check2() {
 
-	if (input.value.length != 5) {
-		return alert('Minimaal 5 letters invoeren');
+	var goed = [];
+	var fout = [];
+	var randomWordPartsCopy = randomWordArray.split("");
+
+	//---- Controleren van het ingevoerde woord (5 letters) ----//
+	for (var i = 0; i < 5; i++) {
+		document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("red");
+
+		//---- Maakt de letters op de goede plek null ----//
+		if (randomWordParts[i] == userInput[i]) {
+			goed[i] = randomWordParts[i];
+			document.getElementById("row" + (activerow - 1) + "box" + i).style.backgroundColor = "green";
+			randomWordPartsCopy[i] = null;
+		}
+
+		//---- Doet anders niets ----//
+		else {
+			fout[i] = userInput[i];
+		}
+
 	}
-	else {
-		var randomWordPartsCopy = randomWordArray.split("");
+	i++;
 
-		//---- Controleren van het ingevoerde woord (5 letters) ----//
-		for (var i = 0; i < 5; i++) {
-			document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("red");
+	//---- Loop voor het controleren of dat de letter in het woord zitten ----//
+	for (j = 0; j < fout.length; j++) {
 
-			//---- Maakt de letters op de goede plek null ----//
-			if (randomWordParts[i] == userInput[i]) {
-				goed[i] = randomWordParts[i];
-				document.getElementById("row" + (activerow - 1) + "box" + i).style.backgroundColor = "green";
-				randomWordPartsCopy[i] = null;
-			}
+		//---- Als de letter in het woord zit dat je invoerd word hij geel ----//
+		if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
+			document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
 		}
-		i++;
-
-		//---- Loop voor het controleren of dat de letter in het woord zitten ----//
-		for (j = 0; j < fout.length; j++) {
-			if (arrCopy[i] != null) {
-
-				//---- Als de letter in het woord zit dat je invoerd word hij geel ----//
-				if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
-					document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
-					randomWordPartsCopy[i] = null;
-				}
-			}
-
-		}
-		j++;
-	}
-}
-
-for (var i = 0; i < 5; i++) {
-	if (arrCopy[i] != null) {
-		if (randPartsCopy.indexOf(arrCopy[i]) > -1) {
-			document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("yellow");
-			randPartsCopy[randPartsCopy.indexOf(arrCopy[i])] = null;
-			arrCopy[i] = null;
-		}
+		// if (randomWordPartsCopy[i] != null) {
+		// 	//---- Als de letter in het woord zit dat je invoerd word hij geel ----//
+		// 	if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
+		// 		document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
+		// 		randomWordPartsCopy[i] = null;
+		// 	}
+		// }
 	}
 }

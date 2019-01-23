@@ -3,7 +3,7 @@
 }
 
 .square {
-  vertical-align:top;
+  vertical-align: top;
   margin-top: 4px;
   border: 1px black solid;
   border-radius: 5px;
@@ -20,7 +20,6 @@
   width: 400px;
   margin: 0 auto;
   margin-top: 50px;
-  /* width: auto; */
   height: auto;
 }
 
@@ -30,7 +29,7 @@
 }
 
 .miniBox {
-  vertical-align:top;
+  vertical-align: top;
   margin-top: 4px;
   border: 1px black solid;
   border-radius: 5px;

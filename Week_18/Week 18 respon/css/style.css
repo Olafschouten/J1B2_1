@@ -1,0 +1,307 @@
+/* Mobiel */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Archivo;
+}
+
+.info {
+    background-color: #e2ed49;
+    padding: 2rem 0 1rem 1rem;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.drop-menu {
+    border: 1px solid white;
+    /* moet er NIET zijn wnr scherm groot */
+    text-align: center;
+    padding: 1rem;
+    background-color: #e2ed49;
+    color: white;
+}
+
+.contact-fixed {
+    display: none;
+    overflow: auto;
+    z-index: 1;
+}
+
+.contact-fixed ul {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 1rem;
+}
+
+.header {
+    padding: 2rem;
+    padding-left: 1rem;
+    background-color: white;
+    height: 9rem;
+    position: relative;
+}
+
+.drop-menu-header {
+    border: 1px solid gray;
+    /* moet er NIET zijn wnr scherm groot */
+    color: gray;
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    float: left;
+    position: absolute;
+    top: 20%;
+}
+
+.header-image {
+    float: right;
+}
+
+.banner {
+    width: 100%;
+    /* 100% ??*/
+}
+
+.content {
+    width: 80%;
+    margin: 50% auto 0 auto;
+}
+
+nav {
+    display: none;
+    /* moet er wel zijn als scherm groot is */
+}
+
+nav ul {
+    padding: 0;
+    margin-top: 6.5rem;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: gray;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+.proefles {
+    margin-bottom: 20%;
+}
+
+.proefles-button {
+    background-color: #e2ed49;
+    border: 1px solid black;
+    width: 100%;
+    /* 100% ?? */
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.proefles-button:hover {
+    background-color: yellow;
+}
+
+.locaties {
+    margin-bottom: 20%;
+}
+
+.rijlessen {
+    margin-bottom: 20%;
+}
+
+.image-overlay {
+    display: none;
+}
+
+.video-div {
+    /*position: relative;
+	margin-top: 20%;
+	width: 100%;
+	height: 20rem;*/
+    margin-bottom: 2rem;
+    height: 12rem;
+    width: 40rem;
+}
+
+.de-video {
+    /*position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);*/
+    width: 27rem;
+    height: 12rem;
+}
+
+footer {
+    background-color: #e2ed49;
+}
+
+footer p {
+    margin: 0;
+    padding: 1rem;
+}
+
+.show {
+    display: block;
+}
+
+@media screen and (min-width: 64em) {
+    /* voor groot scherm */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .info {
+        background-color: #e2ed49;
+        width: 95%;
+        padding: 0 2rem 4rem 0;
+        position: relative;
+    }
+    .drop-menu {
+        display: none;
+    }
+    .info div ul {
+        display: block;
+        position: absolute;
+        right: 20%;
+        top: 20%;
+        z-index: 1;
+    }
+    .info div ul li {
+        display: inline-block;
+        margin-right: 3rem;
+    }
+    .contact-fixed {
+        background-color: #e2ed49;
+        display: block;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 3rem;
+        padding: 1rem;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+    .header {
+        padding: 2rem;
+        background-color: white;
+        height: 9rem;
+        position: relative;
+    }
+    .drop-menu-header {
+        display: none;
+    }
+    .header-image {
+        float: left;
+    }
+    .banner {
+        position: absolute;
+        top: 60%;
+        right: 0;
+        width: 100%;
+    }
+    .txt1 {
+        background-color: #e2ed49;
+        position: absolute;
+        padding: .3rem;
+        font-size: 3rem;
+        top: 240%;
+        left: 42%;
+        z-index: 99;
+    }
+    .txt2 {
+        background-color: #e2ed49;
+        position: absolute;
+        padding: .3rem;
+        font-size: 2rem;
+        top: 275%;
+        left: 35%;
+    }
+    .content {
+        width: 80%;
+        margin: 38% auto 0 auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    nav {
+        display: block;
+        /* moet er wel zijn als scherm groot is */
+        float: right;
+        position: absolute;
+        top: -20%;
+        left: 30%;
+    }
+    nav ul {
+        position: static;
+        left: 0;
+        top: 1%;
+    }
+    nav ul li {
+        display: inline-block;
+    }
+    li a {
+        text-decoration: none;
+        margin-right: 3rem;
+        color: gray;
+    }
+    li a:hover {
+        color: black;
+    }
+    .proefles {
+        grid-column: 1;
+        width: 20rem;
+        margin-left: .6rem;
+    }
+    .proefles-button {
+        background-color: #e2ed49;
+        width: 100%;
+        padding: 1rem;
+        font-weight: bold;
+    }
+    .locaties {
+        grid-column: 2;
+        width: 20rem;
+    }
+    .rijlessen {
+        grid-column: 3;
+        width: 20rem;
+    }
+    .video-div {
+        /*position: relative;
+		margin-top: 20%;
+		width: 100%;
+		height: 20rem;*/
+        grid-column: 1 / 4;
+        width: 100%;
+        height: 30rem;
+        margin-bottom: 6rem;
+    }
+    .de-video {
+        /*position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);*/
+        height: 32rem;
+        width: 100%;
+    }
+    footer {
+        background-color: #e2ed49;
+    }
+    footer p {
+        margin: 0;
+        padding: 1rem;
+    }
+}

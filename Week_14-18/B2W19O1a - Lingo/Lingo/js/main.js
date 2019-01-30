@@ -25,6 +25,7 @@ for (b = 1; b <= 5; b++) {
 	container.appendChild(input);
 	input.classList.add("input");
 	input.setAttribute('placeholder', 'voer je antwoord in');
+	input.setAttribute("maxLength", "5");
 
 	//---- Divjes aanmaken met een class en een id ----//
 	for (var i = 0; i < 5; i++) {
@@ -41,7 +42,7 @@ document.getElementById("row1").firstElementChild.innerHTML = randomWordArray[0]
 //---- Als je op enter drukt word die in de blokjes geplaatst ----//
 input.onkeypress = function (event) {
 	if (event.key == "Enter" || event.keyCode == 13) {
-		var woord = input.value;
+		var woord = input.value.toLowerCase();
 		userInput = woord.split("");
 
 		//---- Het ingevoerde woord printen in de blokjes ----//
@@ -50,26 +51,32 @@ input.onkeypress = function (event) {
 			console.log(woord);
 		}
 
-		activerow++;
 
 		//---- Je kan niet meer dan 5 keer proberen ----//
-		if (activerow > 5) {
-			alert("Dit was je laatse kans!");
-			alert("Het woord was:  " + randomWordArray);
-			location.reload();
+		if (randomWordArray == woord) {
+			setInterval(function () {
+				alert("Het is je gelukt!");
+				location.reload();
+			}, 500);
 		}
 
-		if (randomWordArray == woord) {
-			alert("Het is je gelukt!");
-			location.reload();
+		//---- Als meer dan 5 keer geprobeert hebt dan krijg je een melding dat dit je laatse buurt was met het goede woord erbij ----//
+		else if (activerow >= 5) {
+			//---- Dit zorgt ervoor dat je 1 seconden wacht tot dat je de alerts krijgt ----//
+			setInterval(function () {
+				alert("Dit was je laatse kans!");
+				alert("Het woord was:  " + randomWordArray);
+				location.reload();
+			}, 500);
 		}
+		activerow++;
 
 		console.log(userInput);
-		check2();
+		check();
 	}
 }
 
-function check2() {
+function check() {
 
 	var goed = [];
 	var fout = [];
@@ -79,9 +86,10 @@ function check2() {
 	for (var i = 0; i < 5; i++) {
 		document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("red");
 
-		//---- Maakt de letters op de goede plek null ----//
+		//---- Als de letters van het random woord op de goede plek zitten van het ingevoerde woord ----//
 		if (randomWordParts[i] == userInput[i]) {
 			goed[i] = randomWordParts[i];
+			//---- Maakt de letters op de goede plek goen en null ----//
 			document.getElementById("row" + (activerow - 1) + "box" + i).style.backgroundColor = "green";
 			randomWordPartsCopy[i] = null;
 		}
@@ -95,11 +103,24 @@ function check2() {
 	i++;
 
 	//---- Loop voor het controleren of dat de letter in het woord zitten ----//
-	for (j = 0; j < fout.length; j++) {
+	for (i = 0; i < 5; i++) {
 
-		//---- Als de letter in het woord zit dat je invoerd word hij geel ----//
-		if (fout[j] != null && randomWordPartsCopy.indexOf(fout[j]) > -1) {
-			document.getElementById("row" + (activerow - 1) + "box" + j).style.backgroundColor = "yellow";
+		//---- Voor de letter die niet op null staan ----//
+		if (userInput[i] != null) {
+
+			//---- Dan gaat hij de positie van die letter vergelijken met het random woord waar de letters nog over van zijn ----//
+			var positie = randomWordPartsCopy.indexOf(userInput[i]);
+
+			//---- Als dan de die letters niet -1 zijn of hoger dan ----//
+			if (positie > -1) {
+
+				//---- Maakt de letter geel ----//
+				document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("yellow");
+				
+				//---- En als de letters op geel gezet zijn dan worden die letter op null gezet en op de userInput ----//
+				randomWordPartsCopy[positie] = null;
+				userInput[i] = null;
+			}
 		}
 	}
 }

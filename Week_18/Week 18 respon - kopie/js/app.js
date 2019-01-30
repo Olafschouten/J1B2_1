@@ -1,7 +1,7 @@
-function drop1() {
+function dropMenu() {
     document.getElementById('contactDropdown').classList.toggle('show');
 }
 
-function drop2() {
+function dropHeader() {
     document.getElementById('linksDropdown').classList.toggle('show');
 }

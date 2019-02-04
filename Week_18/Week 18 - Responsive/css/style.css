@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Archivo;
+    font-family: 'Archivo', sans-serif;
 }
 
 .info {
@@ -117,7 +117,7 @@ nav ul li a:hover {
 }
 
 .proefles-button:hover {
-    background-color: yellow;
+    background-color: #bec92f;
 }
 
 .locaties {
@@ -169,6 +169,7 @@ footer p {
     body {
         margin: 0;
         padding: 0;
+        font-family: 'Archivo', sans-serif;
     }
     .info {
         background-color: #e6f332;
@@ -277,7 +278,6 @@ footer p {
         font-size: 1rem;
         grid-column: 1;
         width: 20rem;
-        margin-left: .6rem;
     }
     .proefles-button {
         font-size: 2rem;

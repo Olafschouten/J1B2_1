@@ -115,7 +115,7 @@ function check() {
 			if (positie > -1) {
 
 				//---- Maakt de letter geel ----//
-				document.getElementById("row" + (activerow - 1) + "box" + i).classList.add("yellow");
+				document.getElementById("row" + (activerow - 1) + "box" + i).style.background = "yellow";
 				
 				//---- En als de letters op geel gezet zijn dan worden die letter op null gezet en op de userInput ----//
 				randomWordPartsCopy[positie] = null;

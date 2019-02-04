@@ -6,7 +6,7 @@ body {
 }
 
 .info {
-    background-color: #e2ed49;
+    background-color: #e6f332;
     padding: 1rem 0 1rem 1rem;
     position: relative;
     display: block;
@@ -17,7 +17,7 @@ body {
     border: 1px solid white;
     text-align: center;
     padding: 1.5rem;
-    background-color: #e2ed49;
+    background-color: #e6f332;
     color: white;
 }
 
@@ -68,6 +68,10 @@ body {
     margin: 40% auto 0 auto;
 }
 
+.content p{
+    font-size: 1.
+}
+
 #linksDropdown ul li {
     font-size: 1.5em;
 }
@@ -105,7 +109,7 @@ nav ul li a:hover {
 
 .proefles-button {
     font-size: 1.3rem;
-    background-color: #e2ed49;
+    background-color: #e6f332;
     border: 1px solid black;
     width: 100%;
     padding: 1rem;
@@ -147,7 +151,7 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #e2ed49;
+    background-color: #e6f332;
 }
 
 footer p {
@@ -167,7 +171,7 @@ footer p {
         padding: 0;
     }
     .info {
-        background-color: #e2ed49;
+        background-color: #e6f332;
         width: 100%;
         padding: 0 2rem 0 0;
         position: relative;
@@ -187,7 +191,7 @@ footer p {
         margin-right: 3rem;
     }
     .contact-fixed {
-        background-color: #e2ed49;
+        background-color: #e6f332;
         display: block;
         overflow: hidden;
         position: fixed;
@@ -217,7 +221,7 @@ footer p {
         width: 100%;
     }
     .txt1 {
-        background-color: #e2ed49;
+        background-color: #e6f332;
         position: absolute;
         padding: .3rem;
         font-size: 3rem;
@@ -226,7 +230,7 @@ footer p {
         z-index: 99;
     }
     .txt2 {
-        background-color: #e2ed49;
+        background-color: #e6f332;
         position: absolute;
         padding: .3rem;
         font-size: 2rem;
@@ -238,6 +242,9 @@ footer p {
         margin: 48% auto 0 auto;
         display: grid;
         grid-template-columns: auto auto auto;
+    }
+    #linksDropdown ul {
+        margin-top: 120px;
     }
     #linksDropdown ul li {
         font-size: 1em;
@@ -274,7 +281,7 @@ footer p {
     }
     .proefles-button {
         font-size: 2rem;
-        background-color: #e2ed49;
+        background-color: #e6f332;
         width: 100%;
         padding: 1rem;
         font-weight: bold;
@@ -300,7 +307,7 @@ footer p {
         width: 100%;
     }
     footer {
-        background-color: #e2ed49;
+        background-color: #e6f332;
     }
     footer p {
         margin: 0;

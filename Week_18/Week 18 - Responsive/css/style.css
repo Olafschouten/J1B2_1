@@ -1,4 +1,3 @@
-
 /* Telefoon */
 body {
     margin: 0;
@@ -161,6 +160,7 @@ footer p {
 }
 
 /* Desktop */
+/* Voor Desktop */
 @media screen and (min-width: 66em) {
     body {
         margin: 0;
@@ -169,7 +169,7 @@ footer p {
     .info {
         background-color: #e2ed49;
         width: 100%;
-        padding: 0 2rem 2rem 0;
+        padding: 0 2rem 0 0;
         position: relative;
     }
     .drop-menu {

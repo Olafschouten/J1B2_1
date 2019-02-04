@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 
 <head>
     <title>Verkeerschool</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
 </head>
@@ -12,7 +12,7 @@
 <body>
     <div id='container'>
         <div class='info'>
-            <button onclick='drop1()' class='drop-menu'><i class="fas fa-bars"></i></button>
+            <button onclick='dropMenu()' class='drop-menu'><i class="fas fa-bars"></i></button>
             <div id='contactDropdown' class='contact-fixed'>
                 <ul>
                     <li><i class="fas fa-phone"></i> (06) --- --- --</li>
@@ -25,8 +25,8 @@
         </div>
 
         <div class='header'>
-            <button class='drop-menu-header' onclick='drop2()'><i class="fas fa-bars"></i></button>
-            <img class='header-image' src="img/header.png">
+            <button class='drop-menu-header' onclick='dropHeader()'><i class="fas fa-bars"></i></button>
+            <img class='header-image' src="img/header.jpg" alt="img">
             <nav id='linksDropdown'>
                 <ul>
                     <li><a href="#">AUTORIJBEWIJS <i class="fas fa-angle-down"></i></a></li>
@@ -36,7 +36,7 @@
                     <li><a href="#">CONTACT</a></li>
                 </ul>
             </nav>
-            <img class='banner' src="img/banner.png">
+            <img class='banner' src="img/banner.jpg" alt="img">
         </div>
 
         <div class='content'>
@@ -55,12 +55,13 @@
             <div class='locaties'>
                 <h2><i class="fas fa-map"></i> LOCATIES</h2>
                 <hr>
-                <p>Aliquam erat volutpat. Aenean ac odio et sem rutrum commodo. Cras at elit elementum, fringilla lacus
-                    et, vestibulum libero. Aliquam ac ultrices nunc, quis imperdiet tortor. Sed congue sapien eget
-                    lectus ullamcorper convallis. Integer eget felis id ligula maximus eleifend nec ac sapien. Cras vel
-                    augue tortor. Morbi feugiat, sapien hendrerit porttitor dapibus, leo elit tempor diam, in convallis
-                    nisi odio at sem. Aenean facilisis ipsum est, in fringilla orci molestie a. Vivamus in augue
-                    condimentum, fringilla <a href="#">libero</a> ut, iaculis justo.</p>
+                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer
+                    pretium, felis vel tempor egestas, metus magna scelerisque lorem, ut placerat augue purus sit amet
+                    arcu. Donec metus ipsum, rutrum eget mauris sed, luctus pretium nisl. Nullam suscipit dui sit amet
+                    neque rhoncus tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Pellentesque <a href="#">libero</a> erat, sollicitudin vel dictum at, bibendum
+                    ac sem. Phasellus
+                    nec malesuada purus. Pellentesque ornare tincidunt dapibus.</p>
             </div>
 
             <div class='rijlessen'>
@@ -74,18 +75,17 @@
                     nec malesuada purus. Pellentesque ornare tincidunt dapibus.</p>
             </div>
 
-            <div class='video-div'>
-                <iframe class='de-video' src="https://www.youtube.com/embed/-LIhqaqeXUU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+            <div class='video-container'>
+                <iframe class='video' src="https://www.youtube.com/embed/-LIhqaqeXUU"></iframe>
             </div>
         </div>
 
         <footer>
-            <p>Vince de Jong</p>
+            <p>Olaf Schouten</p>
         </footer>
 
     </div>
-    <script type="text/javascript" src='js/app.js'></script>
+    <script src='js/app.js'></script>
 </body>
 
 </html>

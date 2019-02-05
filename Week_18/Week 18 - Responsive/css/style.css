@@ -63,13 +63,17 @@ body {
     z-index: 0;
 }
 
+#banner-img {
+    
+}
+
 .content {
     width: 80%;
-    margin: 40% auto 0 auto;
+    margin: 0 auto 0 auto;
 }
 
 .content p{
-    font-size: 1.
+    font-size: 1;
 }
 
 #linksDropdown ul li {
@@ -217,7 +221,6 @@ footer p {
     }
     .banner {
         position: absolute;
-        top: 60%;
         right: 0;
         width: 100%;
     }
